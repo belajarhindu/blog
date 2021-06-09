@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SuperAdmin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::domain('superadmin.' . env('APP_URL'))->group(function () {    
+    Route::group(['prefix' => 'admin'], function()
+    {
+        Route::get('/list', [AdminController::class, 'list']);
+    });
+});
+
+
