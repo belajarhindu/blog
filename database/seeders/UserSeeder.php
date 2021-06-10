@@ -21,16 +21,27 @@ class UserSeeder extends Seeder
         //
         DB::table('users')->insert([
             'name' => "SuperAdmin Ganteng",
+            'username' => "superadmin",
             'email' => "superadmin@belajarhindu.com",
             'email_verified_at' => Carbon::now()->toDateString(),            
-            'password' => Hash::make('superadmin'),
+            'password' => Hash::make('qwerty123
+            '),
         ]);
 
         DB::table('users')->insert([
             'name' => "AdminGanteng",
+            'username' => "admin",
             'email' => "admin@forex.com",
             'email_verified_at' => Carbon::now()->toDateString(),            
-            'password' => Hash::make('admin'),
+            'password' => Hash::make('qwerty13'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => "januar elsan",
+            'username' => "januarelsan",
+            'email' => "januarelsan@gmail.com.com",
+            'email_verified_at' => Carbon::now()->toDateString(),            
+            'password' => Hash::make('qwerty123'),
         ]);
     }
 }
